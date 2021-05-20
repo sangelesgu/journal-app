@@ -8,6 +8,8 @@ import { login } from '../actions/auth';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoutes } from './PublicRoutes';
 import { startLoadingNotes } from '../actions/notes';
+import { Spinner } from '../components/spinner/Spinner';
+
 
 export const AppRouter = () => {
 
@@ -32,7 +34,9 @@ export const AppRouter = () => {
 
   if (checking) {
     return (
-      <h1>Wait...</h1>
+      <div className="nothing__main-content">
+        <Spinner />
+      </div>
     )
   }
 
