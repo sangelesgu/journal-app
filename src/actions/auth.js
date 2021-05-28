@@ -21,10 +21,12 @@ export const startLoginEmailPassword = (email, password) => {
 }
 
 export const startGoogleLogin = () => {
+  console.log('Hey');
   return (dispatch) => {
     firebase.auth().signInWithPopup(googleAuthProvider)
       .then( ({user}) => {
-        dispatch(login(user.uid, user.displayName)); 
+        dispatch(login(user.uid, user.displayName));
+        console.log(user) 
       })
       .catch ((e => {
         
